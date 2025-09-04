@@ -41,6 +41,7 @@
 				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 		});
 	</script>-->
+	
 
   </head>
 
@@ -66,7 +67,7 @@
  <!--  <table class="bodytable"><tr><td>-->
 <div style="margin-left:175px; padding-top:10px; padding-left: 10px;">
     <div style="float: right">
-    <a href="https://sites.math.northwestern.edu/~nlohr/bigballer.pdf"><img src="ob.png" height="300"></a>
+    <img id="targetImg" src="ob.png" height="300" alt="click me" style="cursor:pointer">
     </div>
 
 <a name="home"></a>
@@ -118,7 +119,7 @@
    	<ul id="paps1" class="spacylist">
 
       <li style="padding-top:0">
-<a href="https://arxiv.org/abs/2408.16248">On the intertwining map between Coulomb and hyperbolic scattering</a>, <a href="https://msp.org/apde/about/journal/about.html" class="journal">Analysis and Partial Differential Equations</a>, under revisions.
+<a href="https://arxiv.org/abs/2408.16248">On the intertwining map between Coulomb and hyperbolic scattering</a>, <a href="https://msp.org/apde/about/journal/about.html" class="journal">Analysis and Partial Differential Equations</a>, to appear.
 <script language="javascript">writepaperblock(3);</script>
 	<br/><p id="paper3" class="blockp" style="display:none;"><span class="blockspan">
 We construct a unitary operator between Hilbert spaces of generalized eigenfunctions of Coulomb operators and the Laplace-Beltrami operator of hyperbolic space that intertwines their respective Poisson operators on \(L^2(\mathbb{S}^{d-1})\). The constructed operator generalizes Fock's unitary transformation, originally defined between the discrete spectra of the attractive Coulomb operator and the Laplace-Beltrami operator on the sphere, to the setting of continuous spectra. Among other connections, this map explains why the scattering matrices are the same in these two different settings, and it also provides an explicit formula for the Poisson operator of the Coulomb Hamiltonian.
@@ -234,18 +235,27 @@ My senior thesis was on approximating Riemann maps \(f:\Omega \to D\) with circl
 <hr/>
 
 <a name="teaching"></a>
-    <h2>Teaching</h2>
-
+    <h2>Teaching
+			<script language="javascript">writepapsblockq(100);</script></h2>
+	 <ul id="paps100" class="spacylist">
+	<li>
+			<i>Fall 2025 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
+				<ul>
+					<li>MA265 Linear Algebra (2 sections)
+					</li>
+		</ul>
+	</li>
+	</ul>
 <!-- ---------------------------------------------------------- -->
 <!-- ---------------------------------------------------------- -->
 <!-- ---------------------------------------------------------- -->
 
 
 	<h3>Teaching Assisting
-	<script language="javascript">writepapsblockq(7);</script>
+	<script language="javascript">writepapsblock(7);</script>
 	</h3>
 
-    <ul id="paps7" class="spacylist">
+    <ul id="paps7" class="spacylist" style="display:none;">
 	<li>
 			<i>Spring 2024 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
 				<ul>
@@ -418,6 +428,33 @@ My senior thesis was on approximating Riemann maps \(f:\Omega \to D\) with circl
 <script>
 	let text = document.lastModified;
 	document.getElementById("demo").innerHTML = text;
+</script>
+<script>
+const img = document.getElementById('targetImg');
+const singleUrl = 'https://sites.math.northwestern.edu/~nlohr/bigballer.pdf';
+const doubleUrl = 'https://www.desmos.com/calculator/2hilmotkgw';
+
+
+let clickTimer = null;
+const DELAY = 300; // ms
+
+
+img.addEventListener('click', () => {
+if (clickTimer !== null) return;
+clickTimer = setTimeout(() => {
+window.open(singleUrl, '_blank');
+clickTimer = null;
+}, DELAY);
+});
+
+
+img.addEventListener('dblclick', () => {
+if (clickTimer !== null) {
+clearTimeout(clickTimer);
+clickTimer = null;
+}
+window.open(doubleUrl, '_blank');
+});
 </script>
 </div>
    
