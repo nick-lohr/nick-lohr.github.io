@@ -1,488 +1,705 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-		
-		<meta charset="utf-8"> 
-		<meta name="description" content="	I am a Golomb Visiting Assistant Professor at Purdue University. I obtained my Ph.D. at Northwestern University...">
-		<meta name="keywords" content="analysis, math, mathematics, nick, nicholas, lohr, indiana, south bend, niles">
-		<meta name="author" content="Nick Lohr"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.5"> 
-		
+    <meta charset="utf-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-hcCZ1t7t5Mp+lWLycpToBH/i19u8V1Nh2o3J/ompyg0=' 'sha256-l9QIyUZZFnDGaCN5hGaCrCkV/ZBMSO464ChUpk/rWSc=' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; media-src 'self'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; object-src 'none'; frame-src 'none'; worker-src 'none'; script-src-attr 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="description" content="I am a Golomb Visiting Assistant Professor at Purdue University. I obtained my Ph.D. at Northwestern University.">
+    <meta name="keywords" content="analysis, math, mathematics, nick, nicholas, lohr, indiana, south bend, niles">
+    <meta name="author" content="Nick Lohr">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nick Lohr's Homepage</title>
+    <link rel="stylesheet" type="text/css" href="style2.css?nocache=a">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VEVJRVTLVD"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag() {
+  window.dataLayer.push(arguments);
+}
+gtag("js", new Date());
+gtag("config", "G-VEVJRVTLVD");</script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+    <style id="page-polish">/* Layout classes replace the old inline styles without changing the desktop design. */
+html {
+  scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" type="text/css" href="style2.css?nocache=a"/>
+body.site-body {
+  padding-top: 0;
+  padding-right: 10px;
+  padding-left: 0;
+}
 
-		<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEVJRVTLVD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+.site-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 165px;
+  height: 100%;
+  margin-top: 0;
+  background-color: #cfb991;
+}
 
-    gtag('config', 'G-VEVJRVTLVD');
-  </script>
+.site-navigation .menutable {
+  width: 165px;
+}
 
-	<script language="javascript" src="scripts.js?nocache=abrac"></script>
+.site-navigation td.menu {
+  padding: 0;
+}
 
-			<!-- jQuery/Mockjax-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="../jquery.mockjax.js"></script>
+.site-navigation a.menu {
+  display: block;
+  padding: 10px;
+}
 
-		<!-- Bootstrap -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-					integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+.navigation-spacer {
+  height: 20px;
+}
 
-	<!-- MathJax -->	
-	<!--<script type="text/javascript" async
-					src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-	</script>-->
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-	<!--<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-		});
-	</script>-->
-	
+.page-content {
+  margin-left: 175px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
 
+.profile-photo-wrapper {
+  float: right;
+}
+
+.profile-photo {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile-photo:focus-visible,
+button.blocklinks:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.introduction {
+  line-height: 125%;
+}
+
+.no-top-padding {
+  padding-top: 0 !important;
+}
+
+.toggle-controls {
+  margin-left: 1.111111em;
+  white-space: nowrap;
+}
+
+h2 > button.blocklinks {
+  margin-left: 1em;
+}
+
+h2 > button.blocklinks:first-of-type {
+  margin-left: 2.5em;
+}
+
+#expository > button.blocklinks:first-of-type {
+  margin-left: 3.5em;
+}
+
+ul.spacylist li {
+  padding-top: 10px;
+}
+
+button.blocklinks {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #8a8b8c;
+  font-family: inherit;
+  font-size: 10pt;
+  font-variant: small-caps;
+  font-weight: normal;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.blocklinks:hover {
+  color: #8a8b8c;
+  text-decoration: underline;
+}
+
+.pending-link {
+  cursor: default;
+}
+
+.gallery-video,
+.gallery-image-third {
+  width: 32%;
+}
+
+.gallery-image-wide {
+  width: 96%;
+}
+
+.about-details {
+  list-style: none;
+}
+
+.last-updated {
+  font-size: 8pt;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}</style>
   </head>
-
-  <body style="padding-left:0; padding-top: 0;">
-
-<!-- Navigation -->
-
-  <div style="position:fixed; width:165px; height:100%; background-color:#CFB991; margin-top:0px;">
-  <table class="menutable" width="165px">
-<tr><td style="height:20px;" class="menutop"> </td></tr>
-   <tr><td class="menu" onclick="location.replace('#home');"><a class="menu" href="#home">Home</a></td></tr>
-   <tr><td class="menu" onclick="location.replace('#papers');"><a class="menu" href="#papers">Papers</a></td></tr>
-   <tr><td class="menu" onclick="location.replace('#expository');"><a class="menu" href="#expository">Expository</a></td></tr>
-   <tr><td class="menu" onclick="location.replace('#talks');"><a class="menu" href="#talks">Talks</a></td></tr>
-   <tr><td class="menu" onclick="location.replace('#teaching');"><a class="menu" href="#teaching">Teaching</a></td></tr>
-<!--   <tr><td class="menu" onclick="location.replace('#editorial');"><a class="menu" href="#editorial">EDITORIAL</a></td></tr> -->
-   <tr><td class="menu" onclick="location.replace('#other');"><a class="menu" href="#other">Other</a></td></tr>
-   </table> 
-</div>
-
-<!-- End navigation -->
-
- <!--  <table class="bodytable"><tr><td>-->
-<div style="margin-left:175px; padding-top:10px; padding-left: 10px;">
-    <div style="float: right">
-    <img id="targetImg" src="ob.png" height="300" alt="click me" style="cursor:pointer">
-    </div>
-
-<a name="home"></a>
-    <h1>Nick Lohr</h1>
-
- <p style="line-height: 125%;">
-    <a href="https://www.math.purdue.edu/">Department of Mathematics</a><br>
-    <a href="https://www.purdue.edu/">Purdue University</a><br>
-		Office: <br/>
-    E-mail: nlohr at purdue.edu<br/>
-    <br/>
+  <body class="site-body">
+    <!-- Primary navigation -->
+    <nav class="site-navigation" aria-label="Primary navigation">
+      <table class="menutable" role="presentation">
+        <tr>
+          <td class="menutop navigation-spacer"> </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#home">Home</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#papers">Papers</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#expository">Expository</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#talks">Talks</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#teaching">Teaching</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu">
+            <a class="menu" href="#other">Other</a>
+          </td>
+        </tr>
+      </table>
+    </nav>
+    <div class="page-content">
+      <!-- Portrait hover: add ob-hover.png beside this file, or change data-hover-src on #targetImg. Missing files safely fall back to ob.png. -->
+      <div class="profile-photo-wrapper">
+        <img id="targetImg" src="ob.png" height="800" alt="Portrait of Nick Lohr" class="profile-photo" width="400" data-hover-src="17.jpg" data-single-click-url="" data-double-click-url="https://www.desmos.com/calculator/2hilmotkgw" tabindex="0" role="button" aria-label="Portrait of Nick Lohr. Hover or focus for a second photo; activate to open the Desmos page." title="Hover for another photo; double-click or press Enter to open Desmos" decoding="async" draggable="false">
+      </div>
+      <h1 id="home">Nick Lohr</h1>
+      <p class="introduction">
+        <a href="https://www.math.purdue.edu/">Department of Mathematics</a>
+        <br>
+        <a href="https://www.purdue.edu/">Purdue University</a>
+        <br>
+		Office: <br>
+    E-mail: nlohr at purdue.edu<br>
+        <br>
 		I am a Golomb Visiting Assistant Professor at Purdue University studying semiclassical analysis. I obtained my Ph.D. in 2025 at Northwestern University under the supervision of <a href="https://sites.google.com/view/jwunsch/home">Jared Wunsch</a> and <a href="https://en.wikipedia.org/wiki/Steven_Zelditch">Steve Zelditch</a>.
-		<br><br>
-<a href="shortcv.pdf">CV</a><br/>
-
-
-<hr/>
-
-</p>
-
-<!--    <br style="clear:right;"/>-->
-
-
-
-
-
-    <a name="papers"></a>
-    <h2>Papers &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 6 ; i++) {showblock('paps' + i);}">Show all</a>
-	&nbsp;
-	<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 6 ; i++) {hideblock('paps' + i);}">Hide all</a>
-&nbsp;
-<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 39 ; i++) {showblock('paper' + i);}">Show abstracts</a>
-	&nbsp;
-	<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 39 ; i++) {hideblock('paper' + i);}">Hide abstracts</a>
-</h2>
-
-
-
-
-
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-	<h3>Scattering theory
-	<script language="javascript">writepapsblockq(1);</script>
-	</h3>
-
-   	<ul id="paps1" class="spacylist">
-
-			<li style="padding-top:0">
-<a href=" ">The asymptotic structure of forward scattering</a> (with <a href="https://ethanwsussman.github.io/">Ethan Sussman</a>, <a href="https://ioltman.github.io/">Izak Oltman</a>, and <a href="https://joey-zou.github.io/">Joey Zou</a>), prepared to submit.
-<script language="javascript">writepaperblock(5);</script>
-	<br/><p id="paper5" class="blockp" style="display:none;"><span class="blockspan">
-
-<!-- ---------------------------------------------------------- -->	
-<li>
-<a href="https://arxiv.org/abs/2408.16248">On the intertwining map between Coulomb and hyperbolic scattering</a>, <a href="https://msp.org/apde/2026/19-6/p05.xhtml" class="journal">Analysis and Partial Differential Equations</a>, <b>19</b>(2026), no. 6, 1225&ndash;1250
-<script language="javascript">writepaperblock(3);</script>
-	<br/><p id="paper3" class="blockp" style="display:none;"><span class="blockspan">
+		<br>
+        <br>
+        <a href="shortcv.pdf">CV</a>
+        <br>
+      </p>
+      <hr>
+      <h2 id="papers">Papers <button type="button" class="blocklinks" data-action="show-range" data-prefix="paps" data-minimum="1" data-maximum="6">Show all</button>
+        <button type="button" class="blocklinks" data-action="hide-range" data-prefix="paps" data-minimum="1" data-maximum="6">Hide all</button>
+        <button type="button" class="blocklinks" data-action="show-range" data-prefix="paper" data-minimum="1" data-maximum="39">Show abstracts</button>
+        <button type="button" class="blocklinks" data-action="hide-range" data-prefix="paper" data-minimum="1" data-maximum="39">Hide abstracts</button>
+      </h2>
+      <h3>Scattering theory
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps1s" data-action="show" data-target="paps1" aria-controls="paps1" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="paps1h" data-action="hide" data-target="paps1" aria-controls="paps1" aria-expanded="true">Hide</button>
+        </span>
+      </h3>
+      <ul id="paps1" class="spacylist">
+        <li class="no-top-padding">
+          <a aria-disabled="true" class="pending-link">The asymptotic structure of forward scattering</a> (with <a href="https://ethanwsussman.github.io/">Ethan Sussman</a>, <a href="https://ioltman.github.io/">Izak Oltman</a>, and <a href="https://joey-zou.github.io/">Joey Zou</a>), submission soon.
+<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper6s" data-action="show" data-target="paper6" aria-controls="paper6" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper6h" data-action="hide" data-target="paper6" aria-controls="paper6" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper6" class="blockp" hidden="">
+            <span class="blockspan">
+Perturbed plane waves are fundamental objects in scattering theory on Euclidean space and asymptotically Euclidean spaces.
+    In this paper, we investigate the structure of perturbed plane waves in the <i>forward</i> direction, in which the outgoing spherical wave is typically singular and conjoined to the incoming plane wave.  Melrose &amp; Zworski provided a microlocal description (in the more general setting of asymptotically conic manifolds) using their notion of Lagrangian distributions associated to pairs of intersecting Legendrian submanifolds. 
+    Here, we revisit the problem, seeking a more elementary description in terms of physical-space asymptotics. These are specified using a two-faced compactification \(X\hookleftarrow \mathbb{R}^d\), with one face for each asymptotic regime.
+    The quantum inverted harmonic oscillator arises as a model problem at the front face.
+	</span>
+          </p>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2408.16248">On the intertwining map between Coulomb and hyperbolic scattering</a>, <a href="https://msp.org/apde/2026/19-6/p05.xhtml" class="journal">Analysis and Partial Differential Equations</a>, <b>19</b>(2026), no. 6, 1225–1250
+<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper3s" data-action="show" data-target="paper3" aria-controls="paper3" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper3h" data-action="hide" data-target="paper3" aria-controls="paper3" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper3" class="blockp" hidden="">
+            <span class="blockspan">
 We construct a unitary operator between Hilbert spaces of generalized eigenfunctions of Coulomb operators and the Laplace-Beltrami operator of hyperbolic space that intertwines their respective Poisson operators on \(L^2(\mathbb{S}^{d-1})\). The constructed operator generalizes Fock's unitary transformation, originally defined between the discrete spectra of the attractive Coulomb operator and the Laplace-Beltrami operator on the sphere, to the setting of continuous spectra. Among other connections, this map explains why the scattering matrices are the same in these two different settings, and it also provides an explicit formula for the Poisson operator of the Coulomb Hamiltonian.
-	</span></p>
-</ul>
-
-
-		
-	<h3>Semiclassical measures and Wigner distributions
-	<script language="javascript">writepapsblockq(2);</script>
-	</h3>
-
-   	<ul id="paps2" class="spacylist">
-
-			<li style="padding-top:0">
-<a href=" ">Semiclassical measures through Coulomb collisions</a>, submitted.
-<script language="javascript">writepaperblock(4);</script>
-	<br/><p id="paper4" class="blockp" style="display:none;"><span class="blockspan">
-
+	</span>
+          </p>
+        </li>
+      </ul>
+      <h3>Semiclassical measures and Wigner distributions
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps2s" data-action="show" data-target="paps2" aria-controls="paps2" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="paps2h" data-action="hide" data-target="paps2" aria-controls="paps2" aria-expanded="true">Hide</button>
+        </span>
+      </h3>
+      <ul id="paps2" class="spacylist">
+        <li class="no-top-padding">
+          <a href="https://arxiv.org/abs/2607.14313">Semiclassical measures through Coulomb collisions</a>, submitted.
+<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper5s" data-action="show" data-target="paper5" aria-controls="paper5" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper5h" data-action="hide" data-target="paper5" aria-controls="paper5" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper5" class="blockp" hidden="">
+            <span class="blockspan">
+We prove that \(\mu\) is a semiclassical measure associated to a
+sequence of eigenfunctions of energy \(E&lt;0\) of the attractive
+Coulomb operator if and only if $\mu$ is a probability measure
+on the energy (hyper)surface \(\Sigma_E\) invariant under the
+regularized Kepler flow due to Moser. The converse was shown in
+recent work by the author, and the present article
+proves the other direction (as well as an independent proof of
+the converse). We prove the main theorem for a general symbol
+class allowing certain non-decay at infinity, which implies that
+semiclassical measure mass entirely reflects off of the
+origin. In the special case of semiclassical measures of sequences of eigenfunctions of the exact Coulomb operator, this
+article solves an open problem posed by Keraani. The main tools include the celebrated Moser-Fock map along with a technical operator extension lemma in \(\Psi_{\hbar}^0(\mathbb{S}^d)\), which utilizes standard eigenfunction concentration bounds. 
 						
-	</span></p>
-
-      <li>
-<a href="https://arxiv.org/abs/2303.09640">Semiclassical measures of Eigenfunctions of the attractive Coulomb operator</a>, <a href="https://link.springer.com/article/10.1007/s00023-025-01596-6" class="journal">Annales Henri Poincar&eacute</a> <b>27</b>(2026), 2743&ndash;2768
-<script language="javascript">writepaperblock(2);</script>
-	<br/><p id="paper2" class="blockp" style="display:none;"><span class="blockspan">
+	</span>
+          </p>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2303.09640">Semiclassical measures of Eigenfunctions of the attractive Coulomb operator</a>, <a href="https://link.springer.com/article/10.1007/s00023-025-01596-6" class="journal">Annales Henri Poincaré</a>
+          <b>27</b>(2026), 2743–2768
+<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper2s" data-action="show" data-target="paper2" aria-controls="paper2" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper2h" data-action="hide" data-target="paper2" aria-controls="paper2" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper2" class="blockp" hidden="">
+            <span class="blockspan">
 We characterize the set of semiclassical measures corresponding to sequences of eigenfunctions of the attractive Coulomb operator \(\widehat{H}_{\hbar}:=-\frac{\hbar^2}{2}\Delta_{\mathbb{R}^3}-\frac{1}{|x|}\). In particular, any Radon probability measure on the fixed negative energy hypersurface \(\Sigma_E\) of the Kepler Hamiltonian \(H\) in classical phase space that is invariant under the regularized Kepler flow is the semiclassical measure of a sequence of eigenfunctions of \(\widehat{H}_{\hbar}\) with eigenvalue \(E\) as \(\hbar \to 0\). The main tool that we use is the celebrated Fock unitary conjugation map between eigenspaces of \(\widehat{H}_{\hbar}\) and \(-\Delta_{\mathbb{S}^3}\). We first prove that for any Kepler orbit \(\gamma\) on \(\Sigma_E\), there is a sequence of eigenfunctions that converge in the sense of semiclassical measures to the delta measure supported on \(\gamma\) as \(\hbar \to 0\), and we finish using a density argument in the weak-* topology. 
-	</span></p>
-<!-- ---------------------------------------------------------- -->	
-      	<li>
-<a href="https://arxiv.org/abs/2207.01677">Scaling asymptotics of Wigner distributions of harmonic oscillator orbital coherent states</a>,
-	<a href="https://www.tandfonline.com/doi/full/10.1080/03605302.2023.2180754" class="journal">Communications in Partial Differential Equations</a> <b>48</b>(2023), 415&ndash;439
-	<script language="javascript">writepaperblock(1);</script>
-	<br/><p id="paper1" class="blockp" style="display:none;"><span class="blockspan">
+	</span>
+          </p>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2207.01677">Scaling asymptotics of Wigner distributions of harmonic oscillator orbital coherent states</a>,
+	<a href="https://www.tandfonline.com/doi/full/10.1080/03605302.2023.2180754" class="journal">Communications in Partial Differential Equations</a>
+          <b>48</b>(2023), 415–439
+	<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper1s" data-action="show" data-target="paper1" aria-controls="paper1" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper1h" data-action="hide" data-target="paper1" aria-controls="paper1" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper1" class="blockp" hidden="">
+            <span class="blockspan">
 The main result of this article gives scaling asymptotics of the Wigner distributions \(W_{\varphi_N^{\gamma},\varphi_N^{\gamma}}\)
  of isotropic harmonic oscillator orbital coherent states \(\varphi_N^{\gamma}\)
  concentrating along Hamiltonian orbits \(\gamma\) in shrinking tubes around \(\gamma\) in phase space. In particular, these Wigner distributions exhibit a hybrid semi-classical scaling. That is, simultaneously, we have an Airy scaling when the tube has radius \(N^{-2/3}\)
  normal to the energy surface \(\Sigma_E\), and a Gaussian scaling when the tube has radius \(N^{-1/2}\)
  tangent to \(\Sigma_E\).
-	</span></p>
-<!-- ---------------------------------------------------------- -->	
-</ul>
-
-<h3>Ph.D. Thesis
-	<script language="javascript">writepapsblockq(3);</script>
-	</h3>
-	<ul id="paps3" class="spacylist">
-      <li style="padding-top:0">
-<a href="https://sites.math.northwestern.edu/~nlohr/phdthesis.pdf">Semiclassical Phase Space Distributions and Scattering Theory of the Harmonic Oscillator and Hydrogen Atom</a>, <a href="https://www-proquest-com.turing.library.northwestern.edu/pqdtglobal/docview/3215574586/5583C851B5E141DFPQ/1?accountid=12861&sourcetype=Dissertations%20&%20Theses" class="journal">Northwestern University ProQuest Dissertations &amp; Theses</a>, 2025.
-<script language="javascript">writepaperblock(4);</script>
-	<br/><p id="paper4" class="blockp" style="display:none;"><span class="blockspan">
+	</span>
+          </p>
+        </li>
+      </ul>
+      <h3>Ph.D. Thesis
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps3s" data-action="show" data-target="paps3" aria-controls="paps3" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="paps3h" data-action="hide" data-target="paps3" aria-controls="paps3" aria-expanded="true">Hide</button>
+        </span>
+      </h3>
+      <ul id="paps3" class="spacylist">
+        <li class="no-top-padding">
+          <a href="https://sites.math.northwestern.edu/~nlohr/phdthesis.pdf">Semiclassical Phase Space Distributions and Scattering Theory of the Harmonic Oscillator and Hydrogen Atom</a>, <a href="https://www-proquest-com.turing.library.northwestern.edu/pqdtglobal/docview/3215574586/5583C851B5E141DFPQ/1?accountid=12861&amp;sourcetype=Dissertations%20&amp;%20Theses" class="journal">Northwestern University ProQuest Dissertations &amp; Theses</a>, 2025.
+<span class="toggle-controls">
+            <button type="button" class="blocklinks" id="paper4s" data-action="show" data-target="paper4" aria-controls="paper4" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="paper4h" data-action="hide" data-target="paper4" aria-controls="paper4" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="paper4" class="blockp" hidden="">
+            <span class="blockspan">
 We begin this thesis by reviewing the basics of classical and quantum mechanics, with a focus on the ``hidden'' symmetries of the harmonic oscillator and hydrogen atom. We then give scaling asymptotics of the Wigner distributions \(W_{\varphi_{\hbar,N}^{\gamma}}^{\hbar}\) of isotropic harmonic oscillator orbital coherent states \(\varphi_{\hbar,N}^{\gamma}\) concentrating along Hamiltonian orbits \(\gamma\) in shrinking tubes around \(\gamma\) in phase space. In particular, these Wigner distributions exhibit a hybrid semi-classical scaling. That is, simultaneously, we have an Airy scaling when the tube has radius \(\sim\hbar^{2/3}\) normal to the energy surface \(\Sigma_E^{\osc}\), and a Gaussian scaling when the tube has radius \(\sim\hbar^{1/2}\) tangent to \(\Sigma_E^{\osc}\). Later, we characterize the set of semiclassical measures corresponding to sequences of eigenfunctions of the attractive Coulomb operator \(\widehat{H}_{\hbar}^{\odot}\). In particular, any Radon probability measure on the fixed negative energy hypersurface \(\Sigma_E^{\odot}\) of the Kepler Hamiltonian \(H^{\odot}\) in classical phase space that is invariant under the regularized Kepler flow is the semiclassical measure of a sequence of eigenfunctions of \(\widehat{H}_{\hbar}^{\odot}\) with eigenvalue \(E\) as \(\hbar \to 0\). Finally, we construct a unitary operator between Hilbert spaces of generalized eigenfunctions of Coulomb operators and the Laplace-Beltrami operator of hyperbolic space that intertwines their respective Poisson operators on \(L^2(\mathbb{S}^{d-1})\). The constructed operator generalizes Fock's unitary transformation, originally defined between the discrete spectra of the attractive Coulomb operator and the Laplace-Beltrami operator on the sphere, to the setting of continuous spectra. 
-	</span></p>
-
-
-		</ul>
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-
-<hr/>
-
-
-<a name="expository"></a>
-    <h2>Expository work &nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;
-<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 9; i <= 12 ; i++) {showblock('paps' + i);}">Show all</a>
-	&nbsp;
-	<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 9; i <= 12 ; i++) {hideblock('paps' + i);}">Hide all</a>
-&nbsp;
-
-<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 17 ; i++) { 
-showblock('exp' + i);}">Show abstracts</a>
-	&nbsp;
-	<a href="javascript:void(0)" class="blocklinks" onclick="var i; for (i = 1; i <= 17 ; i++) { hideblock('exp' + i);}">Hide abstracts</a></h2>
-    
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-
-
-	<h3>Senior Thesis
-	<script language="javascript">writepapsblockq(9);</script>
-	</h3>
-
-    <ul class="spacylist" id="paps9"> 
-    <li style="padding-top:0">
-	<a href="thesis.pdf">Approximating Riemann mappings by circle packings</a>, supervised by <a href="https://math.nd.edu/people/faculty/jeffrey-diller/">Jeffrey Diller</a>
-	<script language="javascript">writeexpblock(1);</script>
-	<br/><p id="exp1" class="blockp" style="display:none;"><span class="blockspan">
+	</span>
+          </p>
+        </li>
+      </ul>
+      <hr>
+      <h2 id="expository">Expository work <button type="button" class="blocklinks" data-action="show-range" data-prefix="paps" data-minimum="9" data-maximum="12">Show all</button>
+        <button type="button" class="blocklinks" data-action="hide-range" data-prefix="paps" data-minimum="9" data-maximum="12">Hide all</button>
+        <button type="button" class="blocklinks" data-action="show-range" data-prefix="exp" data-minimum="1" data-maximum="17">Show abstracts</button>
+        <button type="button" class="blocklinks" data-action="hide-range" data-prefix="exp" data-minimum="1" data-maximum="17">Hide abstracts</button>
+      </h2>
+      <h3>Senior Thesis
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps9s" data-action="show" data-target="paps9" aria-controls="paps9" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="paps9h" data-action="hide" data-target="paps9" aria-controls="paps9" aria-expanded="true">Hide</button>
+        </span>
+      </h3>
+      <ul class="spacylist" id="paps9">
+        <li class="no-top-padding">
+          <a href="thesis.pdf">Approximating Riemann mappings by circle packings</a>, supervised by <a href="https://math.nd.edu/people/faculty/jeffrey-diller/">Jeffrey Diller</a>
+          <span class="toggle-controls">
+            <button type="button" class="blocklinks" id="exp1s" data-action="show" data-target="exp1" aria-controls="exp1" aria-expanded="false">Abstract</button>
+            <button type="button" class="blocklinks" id="exp1h" data-action="hide" data-target="exp1" aria-controls="exp1" aria-expanded="false" hidden="">Hide abstract</button>
+          </span>
+          <br>
+          <p id="exp1" class="blockp" hidden="">
+            <span class="blockspan">
 My senior thesis was on approximating Riemann maps \(f:\Omega \to D\) with circle packings. It was based on Terrance Tao’s <a href="https://terrytao.wordpress.com/2018/04/12/246c-notes-2-circle-packings-conformal-maps-and-quasiconformal-maps/#more-10532">notes</a> on his <a href="https://terrytao.wordpress.com/">blog</a>. My goal was to prove all of the exercises and give more detailed proofs/definitions where I felt needed. This project spanned from Summer 2018-Summer 2019. There is a nice proof of the Riemann mapping theorem for ring domains that doesn’t use Perron’s method or any theory of prime ends, something I could not find in the literature.
-	</span></p>
-    </ul>
-
-<hr/>
-
-
-<a name="talks"></a>
-    <h2>Talks
-		<script language="javascript">writetitleblock(1);</script>
-	</h2>
-    <ul id="title1" class="spacylist">
-      <li style="padding-top:0">
-				<a href="https://sites.math.northwestern.edu/~nlohr/thesistalk.pdf">Ph.D. Thesis Slides</a>  (use Adobe Acrobat to see the animations and make sure to click "allow")
+	</span>
+          </p>
+        </li>
+      </ul>
+      <hr>
+      <h2 id="talks">Talks
+		<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="title1s" data-action="show" data-target="title1" aria-controls="title1" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="title1h" data-action="hide" data-target="title1" aria-controls="title1" aria-expanded="true">Hide</button>
+        </span>
+      </h2>
+      <ul id="title1" class="spacylist">
+        <li class="no-top-padding">
+          <a href="https://sites.math.northwestern.edu/~nlohr/thesistalk.pdf">Ph.D. Thesis Slides</a>  (use Adobe Acrobat to see the animations and make sure to click "allow")
 				
 </li>
-			</ul>
-
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-
-<hr/>
-
-<a name="teaching"></a>
-    <h2>Teaching
-			<script language="javascript">writepapsblockq(100);</script></h2>
-	 <ul id="paps100" class="spacylist">
-	<li>
-				<i>Fall 2026 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
-				<ul>
-					<li>MA266 Differential Equations (two sections: 083 and 072)
+      </ul>
+      <hr>
+      <h2 id="teaching">Teaching
+			<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps100s" data-action="show" data-target="paps100" aria-controls="paps100" aria-expanded="true" hidden="">Show</button>
+          <button type="button" class="blocklinks" id="paps100h" data-action="hide" data-target="paps100" aria-controls="paps100" aria-expanded="true">Hide</button>
+        </span>
+      </h2>
+      <ul id="paps100" class="spacylist">
+        <li>
+          <i>Fall 2026 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
+          <ul>
+            <li>MA266 Differential Equations (two sections: 083 and 072)
 					</li>
-				</ul>
+          </ul>
+        </li>
+        <li>
+          <i>Spring 2026 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
+          <ul>
+            <li>MA265 Linear Algebra (two sections: 225 and 214)
 					</li>
-	<li>
-		<i>Spring 2026 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
-				<ul>
-					<li>MA265 Linear Algebra (two sections: 225 and 214)
+          </ul>
+        </li>
+        <li>
+          <i>Fall 2025 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
+          <ul>
+            <li>MA265 Linear Algebra (two sections: 501 and 206)
 					</li>
-				</ul>
-				</li>
-	<li>
-			<i>Fall 2025 at <a href="https://www.purdue.edu/">Purdue University</a>:</i>
-				<ul>
-					<li>MA265 Linear Algebra (two sections: 501 and 206)
+          </ul>
+        </li>
+      </ul>
+      <h3>Teaching Assisting
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps7s" data-action="show" data-target="paps7" aria-controls="paps7" aria-expanded="false">Show</button>
+          <button type="button" class="blocklinks" id="paps7h" data-action="hide" data-target="paps7" aria-controls="paps7" aria-expanded="false" hidden="">Hide</button>
+        </span>
+      </h3>
+      <ul id="paps7" class="spacylist" hidden="">
+        <li>
+          <i>Spring 2024 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 218-3 Single-Variable Calculus with Precalculus
 					</li>
-		</ul>
-	</li>
-	</ul>
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-
-
-	<h3>Teaching Assisting
-	<script language="javascript">writepapsblock(7);</script>
-	</h3>
-
-    <ul id="paps7" class="spacylist" style="display:none;">
-	<li>
-			<i>Spring 2024 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 218-3 Single-Variable Calculus with Precalculus
+            <li>MATH 310-3 Probability Theory and Stochastic Analysis
 					</li>
-					<li>MATH 310-3 Probability Theory and Stochastic Analysis
+          </ul>
+        </li>
+        <li>
+          <i>Winter 2024 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 218-2 Single-Variable Calculus with Precalculus
 					</li>
-		</ul>
-	</li>	
-	<li>
-			<i>Winter 2024 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 218-2 Single-Variable Calculus with Precalculus
+            <li>MATH 310-2 Probability Theory and Stochastic Analysis
 					</li>
-					<li>MATH 310-2 Probability Theory and Stochastic Analysis
+          </ul>
+        </li>
+        <li>
+          <i>Fall 2023 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 218-1 Single-Variable Calculus with Precalculus (2 sections)
 					</li>
-		</ul>
-	</li>		
-	<li>
-				<i>Fall 2023 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 218-1 Single-Variable Calculus with Precalculus (2 sections)
+          </ul>
+        </li>
+        <li>
+          <i>Fall 2022 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 218-1 Single-Variable Calculus with Precalculus
 					</li>
-		</ul>
-	</li>
-	<li>
-				<i>Fall 2022 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 218-1 Single-Variable Calculus with Precalculus
+            <li>MATH 450-1 Probability Theory and Stochastic Analysis
 					</li>
-					<li>MATH 450-1 Probability Theory and Stochastic Analysis
+          </ul>
+        </li>
+        <li>
+          <i>Winter 2022 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 360-2 MENU Applied Analysis
 					</li>
-		</ul>
-	</li>
-		<li>
-				<i>Winter 2022 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 360-2 MENU Applied Analysis
+            <li>MATH 382-0 Complex Analysis and Group Theory for ISP  
 					</li>
-					<li>MATH 382-0 Complex Analysis and Group Theory for ISP  
+          </ul>
+        </li>
+        <li>
+          <i>Fall 2021 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 360-1 MENU Applied Analysis
 					</li>
-		</ul>
-	</li>
-		<li>
-				<i>Fall 2021 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 360-1 MENU Applied Analysis
+            <li>MATH 381-0 Fourier Analysis and Boundary Value Problems for ISP  
 					</li>
-					<li>MATH 381-0 Fourier Analysis and Boundary Value Problems for ISP  
+          </ul>
+        </li>
+        <li>
+          <i>Spring 2021 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 218-2 Single-Variable Calculus with Precalculus  
 					</li>
-		</ul>
-	</li>
-		<li>
-				<i>Spring 2021 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 218-2 Single-Variable Calculus with Precalculus  
+            <li>MATH 311-3 MENU Probability and Stochastic Processes
 					</li>
-					<li>MATH 311-3 MENU Probability and Stochastic Processes
-					</li>
-					<li>MATH 450-3 Probability Theory and Stochastic Analysis
+            <li>MATH 450-3 Probability Theory and Stochastic Analysis
 			</li>
-		</ul>
-	</li>
-			<li>
-				<i>Fall 2020 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
-				<ul>
-					<li>MATH 226-0 Sequences and Series
+          </ul>
+        </li>
+        <li>
+          <i>Fall 2020 at <a href="https://www.northwestern.edu/">Northwestern University</a>:</i>
+          <ul>
+            <li>MATH 226-0 Sequences and Series
 					</li>
-					<li>MATH 250-0 Elementary Differential Equations 
+            <li>MATH 250-0 Elementary Differential Equations 
 			</li>
-		</ul>
-	</li>
-	
-	<li>
-		<i>Summer 2019 at <a href="http://www.nd.edu">University of Notre Dame</a>:</i>
-		<ul>
-			<li>MATH 14360 Calculus B
+          </ul>
+        </li>
+        <li>
+          <i>Summer 2019 at <a href="https://www.nd.edu">University of Notre Dame</a>:</i>
+          <ul>
+            <li>MATH 14360 Calculus B
 			</li>
-		</ul>
-	</li>
-
-	<li>
-		<i>Spring 2018 at <a href="http://www.nd.edu">University of Notre Dame</a>:</i>
-		<ul>
-			<li>MATH 20630 Intro to Mathematical Reasoning
+          </ul>
+        </li>
+        <li>
+          <i>Spring 2018 at <a href="https://www.nd.edu">University of Notre Dame</a>:</i>
+          <ul>
+            <li>MATH 20630 Intro to Mathematical Reasoning
 			</li>
-		</ul>
-	</li>
-
-	</ul>
-
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<!-- ---------------------------------------------------------- -->
-<hr/>
-
-
-<a name="other"></a>
-
-
-
-
-
-
-
-    <h2>Other</h2>
-
-
-		<h3>More About Me
-	<script language="javascript">writepapsblock(8);</script>
-	</h3>
-
-    <ul id="paps8" class="spacylist" style="display:none;">
-
- <li style="padding-top:0">
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <h2 id="other">Other</h2>
+      <h3>More About Me
+	<span class="toggle-controls">
+          <button type="button" class="blocklinks" id="paps8s" data-action="show" data-target="paps8" aria-controls="paps8" aria-expanded="false">Show</button>
+          <button type="button" class="blocklinks" id="paps8h" data-action="hide" data-target="paps8" aria-controls="paps8" aria-expanded="false" hidden="">Hide</button>
+        </span>
+      </h3>
+      <ul id="paps8" class="spacylist" hidden="">
+        <li class="no-top-padding">
 				I have two older sisters, Emily Dumais and Meghan Jones, and one younger sister, Caroline Lohr. My mom, Kelly Lohr, is the best Kindergarten teacher in the world, and my dad, Brian Lohr, is the Director of Province Development for the Congregation of Holy Cross and <a href="https://blohrconsulting.com/">consults in college advisory</a>. Here is a <a href="lohrcookbook.pdf">pdf</a> of our family cookbook
 </li>
- 	<section class="container">
+        <li class="container about-details">
 
 		I have been into magic and card handling for most of my life. Here is some cool slow-mo stuff (sometimes it take a minute or so to load):
 		<br>
-		<br>
-
-				<video width="32%" loop autoplay muted playsinline>
-					<source src="movie2.mp4" type="video/mp4">
-					</video>
-				<video width="32%" loop autoplay muted playsinline>
-					<source src="movie3.mp4" type="video/mp4">
-					</video>
-				<video width="32%" loop autoplay muted playsinline>
-					<source src="movie4.mp4" type="video/mp4">
-					</video>
-		<br>
+          <br>
+          <video loop autoplay muted playsinline class="gallery-video">
+            <source src="movie2.mp4" type="video/mp4">
+					
+          </video>
+          <video loop autoplay muted playsinline class="gallery-video">
+            <source src="movie3.mp4" type="video/mp4">
+					
+          </video>
+          <video loop autoplay muted playsinline class="gallery-video">
+            <source src="movie4.mp4" type="video/mp4">
+					
+          </video>
+          <br>
 		Over Summer and Fall 2020, I religiously woke up before 5am to go on runs twice a week. Here are some pictures I took along the way.
 			<br>
-				<img src="6.jpg" alt="Snow" style="width:32%">
-				<img src="5.jpg" alt="Forest" style="width:32%">
-				<img src="8.jpg" alt="Mountains" style="width:32%">
-				<img src="7.jpg" alt="Forest" style="width:96%">
-		<br>
-<!--		You scrolled down this far, so how about some quick facts:<br><br>
+          <img src="6.jpg" alt="Snow" class="gallery-image-third" loading="lazy" decoding="async">
+          <img src="5.jpg" alt="Forest" class="gallery-image-third" loading="lazy" decoding="async">
+          <img src="8.jpg" alt="Mountains" class="gallery-image-third" loading="lazy" decoding="async">
+          <img src="7.jpg" alt="Forest" class="gallery-image-wide" loading="lazy" decoding="async">
+          <br>
+        </li>
+      </ul>
+      <hr>
+      <span class="last-updated">Last updated: <span id="last-modified"></span>
+      </span>
+      <br>
+      <!-- Collapsible sections, modified date, and portrait interactions -->
+      <script>(() => {
+  "use strict";
 
-		Nick's Top 10 Mathematicians of All Time:<br>
-		1. Riemann <br>
-		2. Euler <br>
-		3. Newton <br>
-		4. Gauss <br>
-		5. Weierstrass <br>
-		6. Cauchy <br>
-		7. Kolmogorov <br>
-		8. Hilbert <br>
-		9. Euclid <br>
-		10. Poincar&eacute<br><br>
-		Favorite movies?: The Dark Knight Trilogy, Baby Driver, 1917, The Prestige, The Return of the King (one of my best friends has the riddle of Strider in elvish on his forearm), Fight Club, Revenge of the Sith <br>
-		Favorite bands?: Linkin Park, Red, Coldplay, The Fray, SOAD, RATM, alt-J <br>
-		Decks of cards?: Too many <br>
-		Favorite video game series?: Fallout, Dishonored, Halo, Bioshock, Dark Souls<br>
-		Favorite sports to watch?: MMA and Football <br>
-		Favorite fighter?: MMA: Dustin Poirier, Boxing: Gennady Golovkin <br>
-			Magic the Gathering?: Hahahaha, I don't play that nerdy game........I have ~6 commander decks -->
-	</section>
-</ul>
+  const setBlockVisibility = (targetId, isVisible) => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-    <hr/>
-    <span style="font-size:8pt">Last updated: <span id="demo"></span></span><br/>
-  <!--Date-->
-<script>
-	let text = document.lastModified;
-	document.getElementById("demo").innerHTML = text;
-</script>
-<script>
-const img = document.getElementById('targetImg');
-const singleUrl = '';
-const doubleUrl = 'https://www.desmos.com/calculator/2hilmotkgw';
+    target.hidden = !isVisible;
 
+    const showButton = document.getElementById(`${targetId}s`);
+    const hideButton = document.getElementById(`${targetId}h`);
 
-let clickTimer = null;
-const DELAY = 300; // ms
+    if (showButton) {
+      showButton.hidden = isVisible;
+      showButton.setAttribute("aria-expanded", String(isVisible));
+    }
 
+    if (hideButton) {
+      hideButton.hidden = !isVisible;
+      hideButton.setAttribute("aria-expanded", String(isVisible));
+    }
+  };
 
-img.addEventListener('click', () => {
-if (clickTimer !== null) return;
-clickTimer = setTimeout(() => {
-window.open(singleUrl, '_blank');
-clickTimer = null;
-}, DELAY);
-});
+  const setRangeVisibility = (prefix, minimum, maximum, isVisible) => {
+    for (let index = minimum; index <= maximum; index += 1) {
+      setBlockVisibility(`${prefix}${index}`, isVisible);
+    }
+  };
 
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
 
-img.addEventListener('dblclick', () => {
-if (clickTimer !== null) {
-clearTimeout(clickTimer);
-clickTimer = null;
-}
-window.open(doubleUrl, '_blank');
-});
-</script>
-</div>
-   
+    const control = event.target.closest("button[data-action]");
+    if (!control) return;
+
+    const { action, target, prefix, minimum, maximum } = control.dataset;
+
+    if (action === "show" && target) {
+      setBlockVisibility(target, true);
+    } else if (action === "hide" && target) {
+      setBlockVisibility(target, false);
+    } else if ((action === "show-range" || action === "hide-range") && prefix) {
+      const min = Number.parseInt(minimum || "", 10);
+      const max = Number.parseInt(maximum || "", 10);
+
+      if (Number.isInteger(min) && Number.isInteger(max)) {
+        setRangeVisibility(prefix, min, max, action === "show-range");
+      }
+    }
+  });
+
+  const modifiedDate = document.getElementById("last-modified");
+  if (modifiedDate) {
+    modifiedDate.textContent = document.lastModified;
+  }
+
+  const profileImage = document.getElementById("targetImg");
+  if (!profileImage) return;
+
+  const originalSource = profileImage.getAttribute("src") || "";
+  const hoverSource = (profileImage.dataset.hoverSrc || "").trim();
+  const singleClickUrl = (profileImage.dataset.singleClickUrl || "").trim();
+  const doubleClickUrl = (profileImage.dataset.doubleClickUrl || "").trim();
+  let hoverImageIsReady = false;
+  let clickTimer = null;
+  const clickDelay = 300;
+
+  const openSecurely = (rawUrl) => {
+    if (!rawUrl) return;
+
+    try {
+      const url = new URL(rawUrl, window.location.href);
+      if (url.protocol !== "https:") return;
+
+      const newWindow = window.open(url.href, "_blank", "noopener,noreferrer");
+      if (newWindow) newWindow.opener = null;
+    } catch {
+      // Ignore malformed or unsupported URLs.
+    }
+  };
+
+  const showOriginalImage = () => {
+    if (originalSource && profileImage.getAttribute("src") !== originalSource) {
+      profileImage.setAttribute("src", originalSource);
+    }
+  };
+
+  const showHoverImage = () => {
+    if (hoverImageIsReady && hoverSource) {
+      profileImage.setAttribute("src", hoverSource);
+    }
+  };
+
+  if (hoverSource) {
+    const hoverPreloader = new Image();
+
+    hoverPreloader.addEventListener("load", () => {
+      hoverImageIsReady = true;
+    });
+
+    hoverPreloader.addEventListener("error", () => {
+      hoverImageIsReady = false;
+      showOriginalImage();
+    });
+
+    hoverPreloader.src = hoverSource;
+  }
+
+  profileImage.addEventListener("mouseenter", showHoverImage);
+  profileImage.addEventListener("mouseleave", showOriginalImage);
+  profileImage.addEventListener("focus", showHoverImage);
+  profileImage.addEventListener("blur", showOriginalImage);
+
+  profileImage.addEventListener("error", () => {
+    if (profileImage.getAttribute("src") === hoverSource) {
+      hoverImageIsReady = false;
+      showOriginalImage();
+    }
+  });
+
+  profileImage.addEventListener("click", () => {
+    if (!singleClickUrl || clickTimer !== null) return;
+
+    clickTimer = window.setTimeout(() => {
+      openSecurely(singleClickUrl);
+      clickTimer = null;
+    }, clickDelay);
+  });
+
+  profileImage.addEventListener("dblclick", (event) => {
+    event.preventDefault();
+
+    if (clickTimer !== null) {
+      window.clearTimeout(clickTimer);
+      clickTimer = null;
+    }
+
+    openSecurely(doubleClickUrl);
+  });
+
+  profileImage.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    event.preventDefault();
+    openSecurely(doubleClickUrl);
+  });
+})();</script>
+    </div>
   </body>
 </html>
